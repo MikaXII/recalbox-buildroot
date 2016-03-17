@@ -2,4 +2,4 @@ config BR2_PACKAGE_SUPER_MARIO_WAR
 	bool "supermariowar"
 	
 	help
-	 
+	 no help	 
