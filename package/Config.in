@@ -228,7 +228,9 @@ menu "Emulators"
         source "package/scummvm/Config.in"
         source "package/scummvm-vanfanel/Config.in"
         source "package/dosbox/Config.in"
-
+menu "Games"
+	source "package/super-mario-war/Config.in"
+endmenu
 if BR2_PACKAGE_RETROARCH
 menu "Libretro Cores"
        source "package/libretro-armsnes/Config.in"
