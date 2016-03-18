@@ -7,9 +7,10 @@
 SUPER_MARIO_WAR_VERSION = master #5aa32d40a395a56f69b83deea7400fdef565b37b
 #SUPER_MARIO_WAR_SITE = $(call github,mmatyas,supermariowar,$(SUPER_MARIO_WAR_VERSION))
 SUPER_MARIO_WAR_SITE = https://github.com/mmatyas/supermariowar.git
-SUPER_MARIO_WAR_INSTALL_STAGING = YES
+#SUPER_MARIO_WAR_INSTALL_STAGING = YES
 SUPER_MARIO_WAR_DEPENDENCIES = sdl sdl_image sdl_mixer zlib #enet yaml-cpp
 SUPER_MARIO_WAR_CONF_OPTS = 
+SUPER_MARIO_WAR_SUBDIR = ..
 
 define SUPER_MARIO_WAR_EXTRACT_CMDS
 	rm -rf $(@D)
@@ -24,7 +25,7 @@ endef
 define SUPER_MARIO_WAR_CONFIGURE_CMDS
 	mkdir $(@D)/build && \
 	cd $(@D)/build && \
-	cmake ..
+	cmake .. -DDISABLE_DEFAULT_CFLAGS=1 "$(TARGET_CFLAGS)" "$(TARGET_CXXFLAGS)"
 endef
 
 define SUPER_MARIO_WAR_BUILD_CMDS
