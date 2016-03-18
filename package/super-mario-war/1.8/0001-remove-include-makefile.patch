@@ -1,0 +1,11 @@
+--- a/Makefile	2016-03-17 17:12:59.533118466 +0100
++++ b/Makefile	2016-03-17 17:14:18.143123039 +0100
+@@ -16,7 +16,7 @@
+                 build/objecthazard.o build/uicontrol.o build/uimenu.o \
+                 build/world.o build/worldeditor.o
+ 
+-include configuration
++#include configuration
+ #here because of one .c file among a .cpp project (o_O)
+ 
+ build/%.o : _src/%.cpp
